@@ -56,7 +56,6 @@ function generateToken(user){
 
 
   };
-  console.log(payload)
   return jwt.sign(payload, jwtSecret, options)
 }
 
