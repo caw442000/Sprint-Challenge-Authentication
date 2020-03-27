@@ -1,6 +1,10 @@
+
+
 const request = require("supertest");
 
+
 const server = require("./server.js");
+
 
 describe("server.js", () => {
   describe("Register Endpoints", () => {
@@ -71,7 +75,7 @@ describe("server.js", () => {
       return request(server)
         .post("/api/auth/login")
         .send({
-          username: "cedric",
+          username: "cedric1",
           password: "password"
         })
         .then(response => {
@@ -80,6 +84,7 @@ describe("server.js", () => {
             .set('Accept', 'application/json')
             .set('authorization', `Bearer ${response.body.token}`)
             .expect('Content-Type', /json/)
+            
 
           // .then(res => {
           //   expect(res.status).toBe(200);
