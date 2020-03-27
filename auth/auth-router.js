@@ -26,7 +26,7 @@ router.post("/login", (req, res) => {
 
   Users.findBy({ username })
     .first()
-    .then(users => {
+    .then(user => {
       if (user && bcrypt.compareSync(password, user.password)) {
         console.log(jwtSecret);
         const token = generateToken(user);
